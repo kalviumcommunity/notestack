@@ -1,4 +1,4 @@
-# FSWD CA2 — Notes app (starter)
+# NoteStack (starter)
 
 A small full-stack **notes** app: **React (Vite) + TanStack Query** on the front end,
 **Express + Prisma (PostgreSQL)** on the back end.
@@ -13,7 +13,7 @@ assessment brief. You edit only the files marked with `TODO` comments.
 npm run setup                 # installs root + server + client deps
 
 # database (PostgreSQL)
-createdb fswd_ca2             # create the database once
+createdb notestack           # create the database once
 cd server
 cp .env.example .env          # then edit .env with your PostgreSQL username/password
 npm run db:setup              # prisma migrate dev --name init
