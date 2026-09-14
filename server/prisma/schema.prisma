@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Author {
+  id    Int    @id @default(autoincrement())
+  name  String
+  notes Note[]
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  title     String   @unique
+  body      String
+  createdAt DateTime @default(now())
+  authorId  Int?
+  author    Author?  @relation(fields: [authorId], references: [id])
+}
